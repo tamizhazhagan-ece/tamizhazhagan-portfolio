@@ -1,98 +1,250 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tamizhazhagan S | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; line-height: 1.6; background: #f9f9f9; color: #333; }
-    header { background: #1e1e2f; color: #fff; padding: 2rem; text-align: center; }
-    header h1 { font-size: 2.5rem; }
-    header p { font-size: 1.2rem; margin-top: 0.5rem; }
-    nav { background: #333; padding: 0.5rem; text-align: center; }
-    nav a { color: #fff; margin: 0 1rem; text-decoration: none; font-weight: bold; }
-    section { padding: 2rem; max-width: 1000px; margin: auto; }
-    h2 { color: #1e1e2f; border-bottom: 2px solid #ddd; padding-bottom: 0.5rem; margin-bottom: 1rem; }
-    .certificate, .project { margin-bottom: 1rem; background: #fff; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .skills-list, .contact-links { list-style: none; padding-left: 0; }
-    .skills-list li, .contact-links li { background: #e0e0e0; display: inline-block; padding: 0.4rem 1rem; margin: 0.3rem; border-radius: 20px; }
-    footer { text-align: center; padding: 1rem; background: #1e1e2f; color: #fff; }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    :root {
+      --primary-color: #14f195;
+      --bg-color: #0e0e10;
+      --card-bg: #1a1a1d;
+      --text-color: #ffffff;
+      --subtext-color: #c0c0c0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: var(--primary-color);
+    }
+
+    header p {
+      color: var(--subtext-color);
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    nav {
+      background: #1a1a1d;
+      text-align: center;
+      padding: 1rem;
+      border-top: 1px solid #2e2e32;
+      border-bottom: 1px solid #2e2e32;
+    }
+
+    nav a {
+      color: var(--text-color);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.5rem;
+    }
+
+    .certificate, .project {
+      margin-bottom: 1rem;
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 10px;
+      transition: transform 0.3s, border 0.3s;
+      border: 1px solid #2e2e32;
+    }
+
+    .certificate:hover, .project:hover {
+      transform: scale(1.02);
+      border-color: var(--primary-color);
+    }
+
+    .skills-list, .contact-links {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .skills-list li, .contact-links li {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin: 0.4rem;
+      border-radius: 20px;
+      background: var(--primary-color);
+      font-weight: 600;
+    }
+
+    .skills-list li {
+      color: #000;
+    }
+
+    .contact-links li a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-links li a:hover {
+      text-decoration: underline;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .grid img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .download-btn {
+      display: inline-block;
+      border: 1px solid var(--primary-color);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      color: var(--primary-color);
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .download-btn:hover {
+      background: var(--primary-color);
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-top: 1px solid #2e2e32;
+      color: var(--subtext-color);
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Tamizhazhagan S</h1>
     <p>Aspiring Software Engineer | Full Stack Developer | Tech Enthusiast</p>
-  </header>  <nav>
+  </header>
+
+  <nav>
     <a href="#about">About</a>
     <a href="#resume">Resume</a>
     <a href="#certificates">Certificates</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
-  </nav>  <section id="about">
+  </nav>
+
+  <section id="about">
     <h2>About Me</h2>
     <p>I am a passionate Electronics and Communication Engineering student with a strong interest in software development, problem-solving, and embedded systems. I enjoy building real-world projects and constantly upskilling through hands-on learning and certifications.</p>
-  </section>  <section id="resume">
+  </section>
+
+  <section id="resume">
     <h2>Resume</h2>
-    <p><a href="resume.docx" download>Download My Resume (DOCX)</a></p>
-  </section>  <section id="certificates">
+    <a class="download-btn" href="resume.pdf" download>📄 Download My Resume (PDF)</a>
+  </section>
+
+  <section id="certificates">
     <h2>Certifications</h2>
-    <div class="certificate"><a href="https://www.hackerrank.com/certificates/290cb034aee8" target="_blank">Java (Basic)</a></div>
-    <div class="certificate"><a href="https://www.hackerrank.com/certificates/5413f5626bd4" target="_blank">CSS (Basic)</a></div>
-    <div class="certificate"><a href="https://www.hackerrank.com/certificates/30d1bc932205" target="_blank">Python (Basic)</a></div>
-    <div class="certificate"><a href="https://www.hackerrank.com/certificates/b14ca86c6ba0" target="_blank">JavaScript (Basic)</a></div>
-    <div class="certificate"><a href="https://www.hackerrank.com/certificates/14218b6a54a3" target="_blank">JavaScript (Intermediate)</a></div>
-    <div class="certificate"><a href="https://www.hackerrank.com/certificates/235844bf9d97" target="_blank">Problem Solving (Basic)</a></div>
-    <div class="certificate"><a href="https://www.hackerrank.com/certificates/fbbc6f27d67d" target="_blank">Problem Solving (Intermediate)</a></div>
-    <div class="certificate"><a href="https://www.hackerrank.com/certificates/790a1e1a58b9" target="_blank">SQL (Basic)</a></div>
-    <div class="certificate"><a href="https://www.hackerrank.com/certificates/1b0f18ccd096" target="_blank">SQL (Intermediate)</a></div>
-    <div class="certificate"><a href="https://www.hackerrank.com/certificates/cad54cb0c4a8" target="_blank">SQL (Advanced)</a></div>
-  </section>  <section id="projects">
+    <div class="grid">
+      <div class="certificate"><a href="https://www.hackerrank.com/certificates/290cb034aee8" target="_blank">Java (Basic)</a></div>
+      <div class="certificate"><a href="https://www.hackerrank.com/certificates/5413f5626bd4" target="_blank">CSS (Basic)</a></div>
+      <div class="certificate"><a href="https://www.hackerrank.com/certificates/30d1bc932205" target="_blank">Python (Basic)</a></div>
+      <div class="certificate"><a href="https://www.hackerrank.com/certificates/b14ca86c6ba0" target="_blank">JavaScript (Basic)</a></div>
+      <div class="certificate"><a href="https://www.hackerrank.com/certificates/14218b6a54a3" target="_blank">JavaScript (Intermediate)</a></div>
+      <div class="certificate"><a href="https://www.hackerrank.com/certificates/235844bf9d97" target="_blank">Problem Solving (Basic)</a></div>
+      <div class="certificate"><a href="https://www.hackerrank.com/certificates/fbbc6f27d67d" target="_blank">Problem Solving (Intermediate)</a></div>
+      <div class="certificate"><a href="https://www.hackerrank.com/certificates/790a1e1a58b9" target="_blank">SQL (Basic)</a></div>
+      <div class="certificate"><a href="https://www.hackerrank.com/certificates/1b0f18ccd096" target="_blank">SQL (Intermediate)</a></div>
+      <div class="certificate"><a href="https://www.hackerrank.com/certificates/cad54cb0c4a8" target="_blank">SQL (Advanced)</a></div>
+    </div>
+  </section>
+
+  <section id="projects">
     <h2>Projects</h2>
-    <div class="project">
-      <h3>BookMyShow Ticket Booking System</h3>
-      <p>Developed a Java-based ticket booking application with user authentication, SQL database, and an admin-user interface.</p>
-      <a href="https://github.com/tamizhazhagan-ece/bookmyshow-java" target="_blank">GitHub Repo</a>
+    <div class="grid">
+      <div class="project">
+        <h3>BookMyShow Ticket Booking System</h3>
+        <p>Java-based app with user login, SQL backend, and admin-user UI.</p>
+        <a href="https://github.com/tamizhazhagan-ece/bookmyshow-java" target="_blank">View Project</a>
+      </div>
+      <div class="project">
+        <h3>FM Spy Bug</h3>
+        <p>Wireless FM transmitter for surveillance using wideband FM.</p>
+        <a href="https://github.com/tamizhazhagan-ece/FM-Spy-Bug" target="_blank">View Project</a>
+      </div>
+      <div class="project">
+        <h3>Automatic Cleaning Bot</h3>
+        <p>Mobile-controlled industrial cleaning bot with sensors.</p>
+      </div>
     </div>
-    <div class="project">
-      <h3>FM Spy Bug</h3>
-      <p>Designed a wireless FM transmitter for discreet surveillance using wideband frequency modulation.</p>
-      <a href="https://github.com/tamizhazhagan-ece/FM-Spy-Bug" target="_blank">GitHub Repo</a>
-    </div>
-    <div class="project">
-      <h3>Automatic Cleaning Bot</h3>
-      <p>Created a semi-autonomous bot for industrial floor cleaning, mobile-controlled and equipped with sensors for automation.</p>
-    </div>
-  </section>  <section id="skills">
+  </section>
+
+  <section id="skills">
     <h2>Skills</h2>
     <ul class="skills-list">
-      <li>Java</li>
-      <li>C</li>
-      <li>Python</li>
-      <li>JavaScript</li>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>SQL</li>
-      <li>VS Code</li>
-      <li>IntelliJ</li>
-      <li>Git</li>
-      <li>Linux</li>
-      <li>Arduino</li>
+      <li>Java</li><li>C</li><li>Python</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>SQL</li>
+      <li>VS Code</li><li>IntelliJ</li><li>Git</li><li>Linux</li><li>Arduino</li>
     </ul>
-  </section>  <section id="contact">
+  </section>
+
+  <section id="contact">
     <h2>Contact & Links</h2>
     <ul class="contact-links">
-      <li><a href="mailto:tamizhazhagan.s.ece@gmail.com">tamizhazhagan.s.ece@gmail.com</a></li>
+      <li><a href="mailto:tamizhazhagan.s.ece@gmail.com">Email</a></li>
       <li><a href="https://github.com/tamizhazhagan-ece" target="_blank">GitHub</a></li>
       <li><a href="https://www.linkedin.com/in/tamizhazhagan-s-8a16352a1" target="_blank">LinkedIn</a></li>
       <li><a href="https://www.hackerrank.com/profile/tamizhazhagan_s2" target="_blank">HackerRank</a></li>
     </ul>
-  </section>  <footer>
+  </section>
+
+  <footer>
     <p>&copy; 2025 Tamizhazhagan S | Portfolio</p>
   </footer>
+
 </body>
 </html>
