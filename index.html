@@ -145,12 +145,14 @@
       border-radius: 30px;
       color: var(--primary-color);
       font-weight: 600;
-      transition: background 0.3s, color 0.3s;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
     }
 
     .download-btn:hover {
       background: var(--primary-color);
       color: #000;
+      box-shadow: 0 0 15px var(--primary-color);
+      transform: scale(1.05);
     }
 
     footer {
@@ -160,16 +162,38 @@
       border-top: 1px solid #2e2e32;
       color: var(--subtext-color);
     }
+
+    /* === Animations === */
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate {
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards;
+    }
+
+    .animate-delay-1 { animation-delay: 0.2s; }
+    .animate-delay-2 { animation-delay: 0.4s; }
+    .animate-delay-3 { animation-delay: 0.6s; }
+    .animate-delay-4 { animation-delay: 0.8s; }
   </style>
 </head>
 <body>
 
-  <header>
+  <header class="animate animate-delay-1">
     <h1>Tamizhazhagan S</h1>
     <p>Aspiring Software Engineer | Full Stack Developer | Tech Enthusiast</p>
   </header>
 
-  <nav>
+  <nav class="animate animate-delay-2">
     <a href="#about">About</a>
     <a href="#resume">Resume</a>
     <a href="#certificates">Certificates</a>
@@ -178,17 +202,17 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about">
+  <section id="about" class="animate animate-delay-2">
     <h2>About Me</h2>
     <p>I am a passionate Electronics and Communication Engineering student with a strong interest in software development, problem-solving, and embedded systems. I enjoy building real-world projects and constantly upskilling through hands-on learning and certifications.</p>
   </section>
 
-  <section id="resume">
+  <section id="resume" class="animate animate-delay-3">
     <h2>Resume</h2>
-    <a class="download-btn" href="resume.pdf" download>📄 Download My Resume (PDF)</a>
+    <a class="download-btn" href="resume.docx" download>📄 Download My Resume (PDF)</a>
   </section>
 
-  <section id="certificates">
+  <section id="certificates" class="animate animate-delay-3">
     <h2>Certifications</h2>
     <div class="grid">
       <div class="certificate"><a href="https://www.hackerrank.com/certificates/290cb034aee8" target="_blank">Java (Basic)</a></div>
@@ -204,7 +228,7 @@
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="animate animate-delay-3">
     <h2>Projects</h2>
     <div class="grid">
       <div class="project">
@@ -224,7 +248,7 @@
     </div>
   </section>
 
-  <section id="skills">
+  <section id="skills" class="animate animate-delay-3">
     <h2>Skills</h2>
     <ul class="skills-list">
       <li>Java</li><li>C</li><li>Python</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>SQL</li>
@@ -232,7 +256,7 @@
     </ul>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="animate animate-delay-4">
     <h2>Contact & Links</h2>
     <ul class="contact-links">
       <li><a href="mailto:tamizhazhagan.s.ece@gmail.com">Email</a></li>
@@ -242,7 +266,7 @@
     </ul>
   </section>
 
-  <footer>
+  <footer class="animate animate-delay-4">
     <p>&copy; 2025 Tamizhazhagan S | Portfolio</p>
   </footer>
 
