@@ -248,7 +248,7 @@ main{position:relative;z-index:1;}
 /* ── HERO ── */
 .hero{
   min-height:100vh;display:flex;flex-direction:column;justify-content:center;
-  padding:7rem 3rem 5rem;max-width:1200px;margin:0 auto;
+  padding:7rem 3rem 5rem;max-width:1100px;margin:0 auto;
   position:relative;
 }
 .hero-eyebrow{
@@ -266,7 +266,7 @@ main{position:relative;z-index:1;}
 }
 .hero-name{
   font-family:var(--display);
-  font-size:clamp(1.4rem,5.5vw,7rem);
+  font-size:clamp(1.6rem,5.8vw,6.4rem);
   line-height:.95;letter-spacing:.02em;
   color:var(--text);font-weight:800;
   display:block;
@@ -275,9 +275,9 @@ main{position:relative;z-index:1;}
   max-width:100%;
 }
 /* Fluid scaling breakpoints to guarantee single-line fit */
-@media(max-width:900px){.hero-name{font-size:clamp(1.2rem,6.5vw,4rem);}}
-@media(max-width:600px){.hero-name{font-size:clamp(1rem,7.2vw,2.6rem);letter-spacing:.01em;}}
-@media(max-width:380px){.hero-name{font-size:6.8vw;}}
+@media(max-width:900px){.hero-name{font-size:clamp(1.3rem,7vw,4.5rem);}}
+@media(max-width:600px){.hero-name{font-size:clamp(1.1rem,7.8vw,3rem);letter-spacing:.01em;}}
+@media(max-width:380px){.hero-name{font-size:7.4vw;}}
 .hero-name .accent{
   background-image:var(--metal-grad);
   background-size:250% auto;
@@ -289,13 +289,13 @@ main{position:relative;z-index:1;}
 @keyframes metalShine{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .hero-initial{
   font-family:var(--display);
-  font-size:clamp(1.5rem,4vw,5rem);
+  font-size:clamp(1.2rem,3vw,3.5rem);
   color:var(--text-mid);letter-spacing:.18em;
   display:block;margin-top:.5rem;font-weight:700;
 }
 .hero-initial-inline{
   font-family:var(--display);
-  font-size:clamp(1rem,4.5vw,5.5rem);
+  font-size:clamp(1.3rem,4.5vw,5.1rem);
   color:var(--accent-bright);letter-spacing:.08em;
   font-weight:800;
   display:block;
@@ -316,8 +316,8 @@ main{position:relative;z-index:1;}
 .role-pill:hover{border-color:var(--accent-dim);color:var(--text);}
 .role-sep{color:var(--text-faint);font-size:.7rem;}
 .hero-desc{
-  margin-bottom:2.5rem;font-family:var(--sans);font-size:1rem;
-  color:var(--text-mid);max-width:540px;line-height:1.85;
+  margin-bottom:2.5rem;font-family:var(--sans);font-size:.9rem;
+  color:var(--text-mid);max-width:480px;line-height:1.85;
   opacity:0;animation:slideUp .6s .9s forwards;
 }
 .hero-desc strong{color:var(--text);font-weight:500;}
@@ -380,7 +380,7 @@ main{position:relative;z-index:1;}
 @keyframes slideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
 /* ── DIVIDER ── */
-.section-divider{max-width:1200px;margin:0 auto;padding:0 3rem;}
+.section-divider{max-width:1100px;margin:0 auto;padding:0 3rem;}
 .section-divider-inner{
   position:relative;height:1px;
   background:linear-gradient(90deg,transparent,var(--border-hi) 25%,rgba(205,166,77,.45) 50%,var(--border-hi) 75%,transparent);
@@ -392,7 +392,7 @@ main{position:relative;z-index:1;}
 }
 
 /* ── SECTION BASE ── */
-.section{padding:5rem 3rem;max-width:1200px;margin:0 auto;}
+.section{padding:5rem 2.5rem;max-width:960px;margin:0 auto;}
 .sec-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:3.5rem;}
 .sec-num{
   font-family:var(--sans);font-size:.6rem;color:var(--accent);
@@ -400,7 +400,7 @@ main{position:relative;z-index:1;}
 }
 .sec-title{
   font-family:var(--display);
-  font-size:clamp(2.2rem,4.5vw,4rem);
+  font-size:clamp(1.6rem,3vw,2.8rem);
   color:var(--text);letter-spacing:.04em;line-height:1;font-weight:800;
 }
 .sec-line{
@@ -505,7 +505,7 @@ main{position:relative;z-index:1;}
   letter-spacing:.16em;text-transform:uppercase;
 }
 .proj-title{
-  font-family:var(--display);font-size:clamp(1.4rem,2.5vw,2.1rem);
+  font-family:var(--display);font-size:clamp(1.1rem,1.8vw,1.5rem);
   color:var(--text);letter-spacing:.04em;line-height:1.05;
   margin-bottom:.6rem;font-weight:800;
 }
@@ -854,6 +854,147 @@ footer a:hover{color:var(--text-mid);}
 }
 .skip-link:focus{top:0;}
 button:focus,a:focus{outline:2px solid var(--accent);outline-offset:2px;}
+
+/* ── HERO PHOTO (absolute, right side, below name) ── */
+.hero-photo-wrap{
+  position:absolute;
+  right:0.5rem;
+  top:50%;
+  transform:translateY(-30%);
+  display:flex;flex-direction:column;align-items:center;
+  pointer-events:none;
+  z-index:2;
+}
+.hero-photo-frame{
+  width:220px;height:220px;
+  border-radius:50%;
+  border:2px solid var(--accent-dim);
+  box-shadow:0 0 0 8px rgba(205,166,77,.07),0 0 50px rgba(205,166,77,.15);
+  overflow:hidden;
+  flex-shrink:0;
+  pointer-events:auto;
+}
+.hero-photo-frame img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center 10%;
+  display:block;
+}
+.hero-photo-badge{
+  margin-top:10px;
+  background:var(--bg-card);border:1px solid var(--border-mid);
+  font-family:var(--mono);font-size:.58rem;color:var(--accent);
+  padding:.25rem .75rem;letter-spacing:.1em;white-space:nowrap;
+}
+.hero-photo-ring{
+  position:absolute;
+  width:252px;height:252px;
+  border-radius:50%;
+  border:1px solid var(--border-mid);
+  animation:spinRing 18s linear infinite;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+}
+.hero-photo-ring::after{
+  content:'';position:absolute;top:-3px;left:50%;transform:translateX(-50%);
+  width:6px;height:6px;border-radius:50%;background:var(--accent);
+}
+@keyframes spinRing{to{transform:translate(-50%,-50%) rotate(360deg);}}
+
+/* Tablet: hide photo or shrink */
+@media(max-width:1100px){
+  .hero-photo-wrap{right:0rem;}
+  .hero-photo-frame{width:180px;height:180px;}
+  .hero-photo-ring{width:212px;height:212px;}
+}
+/* Mobile: hide absolutely positioned photo (stacked layout not needed since original is single col) */
+@media(max-width:768px){
+  .hero-photo-wrap{display:none;}
+}
+/* ── FEATURED ACHIEVEMENT ── */
+.feat-achieve-wrap{
+  display:grid;grid-template-columns:1fr 1fr;gap:.8rem;
+}
+.feat-achieve-card{
+  background:var(--bg-card);border:1px solid var(--border-mid);
+  padding:1rem 1.2rem;position:relative;overflow:hidden;
+  transition:border-color .2s,transform .2s;
+}
+.feat-achieve-card:hover{border-color:var(--accent-dim);transform:translateY(-3px);}
+.feat-achieve-card.gold{border-color:var(--accent-dim);background:linear-gradient(135deg,var(--bg-card) 60%,rgba(205,166,77,.07));}
+.feat-achieve-ico{font-size:1.8rem;margin-bottom:.6rem;}
+.feat-achieve-title{font-family:var(--display);font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:.3rem;}
+.feat-achieve-sub{font-family:var(--sans);font-size:.72rem;color:var(--accent-dim);margin-bottom:.6rem;letter-spacing:.05em;}
+.feat-achieve-desc{font-family:var(--sans);font-size:.76rem;color:var(--text-mid);line-height:1.6;}
+.feat-achieve-card::before{
+  content:'';position:absolute;top:0;right:0;width:60px;height:60px;
+  background:radial-gradient(circle,rgba(205,166,77,.12),transparent 70%);
+}
+@media(max-width:700px){.feat-achieve-wrap{grid-template-columns:1fr;}}
+
+/* ── RESUME PREVIEW ── */
+.resume-preview-wrap{
+  background:var(--bg-card);border:1px solid var(--border-mid);
+  padding:2rem;
+}
+.resume-preview-header{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;
+}
+.resume-preview-title{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--text);}
+.resume-preview-name{font-family:var(--mono);font-size:.75rem;color:var(--accent);letter-spacing:.1em;margin-bottom:.25rem;}
+.resume-preview-sub{font-family:var(--sans);font-size:.72rem;color:var(--text-mid);}
+.resume-dl-btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--accent);color:#000;font-family:var(--mono);
+  font-size:.7rem;font-weight:600;letter-spacing:.08em;
+  padding:.55rem 1.2rem;border:none;cursor:pointer;
+  text-decoration:none;transition:background .2s;
+}
+.resume-dl-btn:hover{background:var(--accent-bright);}
+.resume-sections-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;
+}
+.resume-sec-block{
+  border-left:2px solid var(--border-mid);padding-left:1rem;
+}
+.resume-sec-block h4{
+  font-family:var(--mono);font-size:.65rem;color:var(--accent);
+  letter-spacing:.1em;margin-bottom:.6rem;
+}
+.resume-sec-block ul{list-style:none;padding:0;}
+.resume-sec-block li{
+  font-family:var(--sans);font-size:.78rem;color:var(--text-mid);
+  padding:.2rem 0;border-bottom:1px solid var(--border);
+  line-height:1.5;
+}
+.resume-sec-block li:last-child{border-bottom:none;}
+@media(max-width:700px){.resume-sections-grid{grid-template-columns:1fr;}}
+
+/* ── HACKERRANK BADGES ── */
+.hr-badges-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem;
+}
+.hr-badge-card{
+  background:var(--bg-card);border:1px solid var(--border-mid);
+  padding:1.2rem 1rem;text-align:center;
+  transition:border-color .2s,transform .2s;
+  text-decoration:none;
+}
+.hr-badge-card:hover{border-color:var(--accent-dim);transform:translateY(-2px);}
+.hr-badge-ico{
+  width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;margin:0 auto .7rem;
+}
+.hr-badge-ico.gold{background:linear-gradient(135deg,#8a6d2e,#f0c860);color:#000;}
+.hr-badge-ico.silver{background:linear-gradient(135deg,#5a5a5a,#c0c0c0);color:#000;}
+.hr-badge-ico.bronze{background:linear-gradient(135deg,#6b3a2a,#cd7f32);color:#fff;}
+.hr-badge-name{font-family:var(--sans);font-size:.72rem;color:var(--text);font-weight:600;margin-bottom:.2rem;}
+.hr-badge-stars{color:var(--accent);font-size:.74rem;margin-bottom:.2rem;}
+.hr-badge-level{font-family:var(--mono);font-size:.62rem;color:var(--text-dim);letter-spacing:.06em;}
+.hr-section-note{font-family:var(--sans);font-size:.82rem;color:var(--text-mid);margin-top:1rem;text-align:center;}
+
 </style>
 
 <!-- Schema.org -->
@@ -882,7 +1023,7 @@ button:focus,a:focus{outline:2px solid var(--accent);outline-offset:2px;}
   <span class="cf cf-bl"></span><span class="cf cf-br"></span>
 </div>
 <canvas id="grid-canvas" aria-hidden="true" role="presentation"></canvas>
-<a href="#contact" id="sticky-hire" aria-label="Open to hire — contact section">Open to Hire</a>
+<a href="mailto:tamizhazhagan.s.ece@gmail.com" id="sticky-hire" aria-label="Open to hire — send email">Open to Hire</a>
 <button id="scroll-top" aria-label="Scroll back to top" title="Back to top">↑</button>
 
 <!-- NAV -->
@@ -944,6 +1085,15 @@ button:focus,a:focus{outline:2px solid var(--accent);outline-offset:2px;}
   <div class="hero-scroll-ind">
     <div class="scroll-bar"></div>
     Scroll
+  </div>
+
+  <!-- Profile Photo -->
+  <div class="hero-photo-wrap" aria-hidden="true">
+    <div class="hero-photo-ring"></div>
+    <div class="hero-photo-frame">
+      <img src="assets/profile.png" alt="Tamizhazhagan S" />
+    </div>
+    <div class="hero-photo-badge">Tamizhazhagan S · ECE · 2026</div>
   </div>
 
   <div class="hero-stats" aria-label="Key statistics">
@@ -1087,6 +1237,7 @@ button:focus,a:focus{outline:2px solid var(--accent);outline-offset:2px;}
       </div>
       <div class="proj-title">IoT Smart Helmet — Accident Detection &amp; Emergency Alert</div>
       <div class="proj-tagline">Problem: 60% of road fatalities involve delayed emergency response. This system eliminates that delay.</div>
+      </div>
 
       <div class="case-grid" role="region" aria-label="Case study">
         <div class="cs-block">
@@ -1142,6 +1293,7 @@ button:focus,a:focus{outline:2px solid var(--accent);outline-offset:2px;}
       </div>
       <div class="proj-title">BookMyShow Ticket Booking System</div>
       <div class="proj-tagline">Full-stack Java application with dual-role authentication, SQL backend, and clean separation of concerns.</div>
+      </div>
 
       <div class="case-grid" role="region" aria-label="Case study">
         <div class="cs-block">
@@ -1233,6 +1385,94 @@ button:focus,a:focus{outline:2px solid var(--accent);outline-offset:2px;}
         <span class="chip" role="listitem">Robotics</span><span class="chip" role="listitem">Embedded Systems</span><span class="chip" role="listitem">Motor Control</span><span class="chip" role="listitem">Ultrasonic Sensors</span><span class="chip" role="listitem">Wireless RF</span>
       </div>
     </div>
+
+    <!-- TASKFLOW PRO -->
+    <div class="proj reveal" role="article" aria-label="TaskFlow Pro Spring Boot project">
+      <div class="proj-top">
+        <div class="proj-id">Project 05 · Spring Boot 3.2 · React · Java 21 · Full-Stack</div>
+        <div class="proj-badge">Production-Grade</div>
+      </div>
+      <div class="proj-title">TaskFlow Pro — Enterprise Task Management Platform</div>
+      <div class="proj-tagline">Production-grade fullstack application with JWT auth, real-time updates, and clean REST architecture — built to L99 quality standards.</div>
+      </div>
+
+      <div class="case-grid" role="region" aria-label="Case study">
+        <div class="cs-block">
+          <div class="cs-label">// Architecture</div>
+          <div class="cs-text">Spring Boot 3.2 backend with Java 21 virtual threads, layered architecture (Controller → Service → Repository), and full OpenAPI documentation.</div>
+        </div>
+        <div class="cs-block">
+          <div class="cs-label">// Security</div>
+          <div class="cs-text"><strong>JWT-based stateless authentication</strong> with Spring Security 6, role-based access control, and BCrypt password hashing.</div>
+        </div>
+        <div class="cs-block">
+          <div class="cs-label">// Frontend</div>
+          <div class="cs-text">React 18 SPA with Context API state management, Axios interceptors for auth token refresh, and responsive Tailwind UI.</div>
+        </div>
+      </div>
+
+      <div class="impact-box">
+        <div class="impact-label">⚡ Key Features</div>
+        <ul class="impact-list">
+          <li>Spring Boot 3.2 + Java 21 with virtual thread executor — high-concurrency ready</li>
+          <li>Full CRUD task management with priority, deadline, and status tracking</li>
+          <li>JWT auth with refresh token rotation — stateless, production-secure</li>
+          <li>React 18 frontend with optimistic UI updates and real-time state sync</li>
+          <li>PostgreSQL backend with JPA/Hibernate — schema managed via Flyway migrations</li>
+        </ul>
+      </div>
+
+      <div class="chips" role="list">
+        <span class="chip" role="listitem">Spring Boot 3.2</span>
+        <span class="chip" role="listitem">Java 21</span>
+        <span class="chip" role="listitem">React 18</span>
+        <span class="chip" role="listitem">Spring Security 6</span>
+        <span class="chip" role="listitem">JWT</span>
+        <span class="chip" role="listitem">PostgreSQL</span>
+        <span class="chip" role="listitem">JPA/Hibernate</span>
+        <span class="chip" role="listitem">Flyway</span>
+        <span class="chip" role="listitem">REST API</span>
+      </div>
+      <div class="proj-links-row">
+        <a href="https://github.com/tamizhazhagan-ece/taskflow-pro" target="_blank" rel="noopener noreferrer" class="proj-link" aria-label="GitHub repository">GitHub Repo</a>
+      </div>
+    </div>
+
+    <!-- STUDENT MANAGEMENT SYSTEM -->
+    <div class="proj reveal" role="article" aria-label="Student Management System project">
+      <div class="proj-top">
+        <div class="proj-id">Project 06 · Spring Boot · React · CRUD · REST</div>
+      </div>
+      <div class="proj-title">Student Management System — Full-Stack CRUD App</div>
+      <div class="proj-tagline">End-to-end student record management with Spring Boot REST API and React frontend — clean separation of concerns, production-ready patterns.</div>
+      </div>
+
+      <div class="case-grid">
+        <div class="cs-block">
+          <div class="cs-label">// Backend</div>
+          <div class="cs-text">Spring Boot REST API with full CRUD operations, JPA/Hibernate ORM, MySQL persistence, and proper HTTP status code handling.</div>
+        </div>
+        <div class="cs-block">
+          <div class="cs-label">// Frontend</div>
+          <div class="cs-text">React SPA consuming the REST API — list, add, edit, and delete student records with form validation and error boundary handling.</div>
+        </div>
+        <div class="cs-block">
+          <div class="cs-label">// Design</div>
+          <div class="cs-text">Layered architecture: Controller → Service → Repository. <strong>Zero business logic in controllers</strong>, full DTO pattern, clean API contract.</div>
+        </div>
+      </div>
+
+      <div class="chips" role="list">
+        <span class="chip" role="listitem">Spring Boot</span>
+        <span class="chip" role="listitem">React</span>
+        <span class="chip" role="listitem">MySQL</span>
+        <span class="chip" role="listitem">JPA/Hibernate</span>
+        <span class="chip" role="listitem">REST API</span>
+        <span class="chip" role="listitem">Axios</span>
+      </div>
+      <div class="proj-links-row">
+        <a href="https://github.com/tamizhazhagan-ece/student-management" target="_blank" rel="noopener noreferrer" class="proj-link" aria-label="GitHub repository">GitHub Repo</a>
+      </div>
 
   </div>
 </section>
@@ -1363,6 +1603,50 @@ button:focus,a:focus{outline:2px solid var(--accent);outline-offset:2px;}
       <div class="proof-platform">IoT Helmet · End-to-end</div>
     </div>
   </div>
+  <!-- HackerRank Badges -->
+  <div class="reveal" style="margin-top:2.5rem;">
+    <div style="font-family:var(--mono);font-size:.65rem;color:var(--accent);letter-spacing:.1em;margin-bottom:1rem;">// HACKERRANK SKILL BADGES</div>
+    <div class="hr-badges-grid">
+      <a href="https://www.hackerrank.com/profile/tamizhazhagan_s2" target="_blank" rel="noopener noreferrer" class="hr-badge-card">
+        <div class="hr-badge-ico gold">J</div>
+        <div class="hr-badge-name">Java</div>
+        <div class="hr-badge-stars">★★★★★</div>
+        <div class="hr-badge-level">5 Stars · Gold</div>
+      </a>
+      <a href="https://www.hackerrank.com/profile/tamizhazhagan_s2" target="_blank" rel="noopener noreferrer" class="hr-badge-card">
+        <div class="hr-badge-ico gold">PS</div>
+        <div class="hr-badge-name">Problem Solving</div>
+        <div class="hr-badge-stars">★★★★★</div>
+        <div class="hr-badge-level">5 Stars · Gold</div>
+      </a>
+      <a href="https://www.hackerrank.com/profile/tamizhazhagan_s2" target="_blank" rel="noopener noreferrer" class="hr-badge-card">
+        <div class="hr-badge-ico silver">DB</div>
+        <div class="hr-badge-name">SQL</div>
+        <div class="hr-badge-stars">★★★★☆</div>
+        <div class="hr-badge-level">4 Stars · Silver</div>
+      </a>
+      <a href="https://www.hackerrank.com/profile/tamizhazhagan_s2" target="_blank" rel="noopener noreferrer" class="hr-badge-card">
+        <div class="hr-badge-ico silver">JS</div>
+        <div class="hr-badge-name">JavaScript</div>
+        <div class="hr-badge-stars">★★★☆☆</div>
+        <div class="hr-badge-level">3 Stars · Silver</div>
+      </a>
+      <a href="https://www.hackerrank.com/profile/tamizhazhagan_s2" target="_blank" rel="noopener noreferrer" class="hr-badge-card">
+        <div class="hr-badge-ico bronze">Py</div>
+        <div class="hr-badge-name">Python</div>
+        <div class="hr-badge-stars">★★★☆☆</div>
+        <div class="hr-badge-level">3 Stars · Bronze</div>
+      </a>
+      <a href="https://www.hackerrank.com/certificates/4909307f4f1b" target="_blank" rel="noopener noreferrer" class="hr-badge-card" style="border-color:var(--accent-dim);">
+        <div class="hr-badge-ico gold">★</div>
+        <div class="hr-badge-name">Software Engineer</div>
+        <div class="hr-badge-stars" style="color:var(--accent);">✓ Verified</div>
+        <div class="hr-badge-level">Full-Stack Certified</div>
+      </a>
+    </div>
+    <p class="hr-section-note">Update star ratings to match your actual HackerRank profile badges.</p>
+  </div>
+
   <div class="proof-links reveal" role="list" aria-label="Profile links">
     <a href="https://github.com/tamizhazhagan-ece" target="_blank" rel="noopener noreferrer" class="proof-link-btn" role="listitem">
       <span class="proof-ico">GH</span> GitHub — tamizhazhagan-ece
@@ -1407,6 +1691,57 @@ button:focus,a:focus{outline:2px solid var(--accent);outline-offset:2px;}
     <a href="https://www.hackerrank.com/certificates/1b0f18ccd096" target="_blank" rel="noopener noreferrer" class="cert-card"><div class="cert-ico">DB</div><div><div class="cert-name">SQL (Intermediate)</div><div class="cert-src">HackerRank</div></div></a>
     <a href="https://www.hackerrank.com/certificates/cad54cb0c4a8" target="_blank" rel="noopener noreferrer" class="cert-card"><div class="cert-ico">DB</div><div><div class="cert-name">SQL (Advanced)</div><div class="cert-src">HackerRank</div></div></a>
     <a href="https://www.hackerrank.com/certificates/5ec2cfd017df" target="_blank" rel="noopener noreferrer" class="cert-card"><div class="cert-ico">SI</div><div><div class="cert-name">Software Engineer Intern</div><div class="cert-src">HackerRank · Problem Solving + SQL</div></div></a>
+  </div>
+</section>
+
+<div class="section-divider"><div class="section-divider-inner"></div></div>
+
+<!-- ══ RESUME PREVIEW ══ -->
+<section class="section" id="resume" aria-labelledby="resume-title">
+  <div class="sec-header reveal">
+    <span class="sec-num">08 — Resume</span>
+    <h2 class="sec-title" id="resume-title">Resume</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="resume-preview-wrap reveal">
+    <div class="resume-preview-header">
+      <div>
+        <div class="resume-preview-name">TAMIZHAZHAGAN S</div>
+        <div class="resume-preview-title">Resume Preview</div>
+        <div class="resume-preview-sub">ECE Engineer · Full-Stack Java Developer · IoT Systems Researcher</div>
+      </div>
+      <a href="Resume.pdf" download class="resume-dl-btn" aria-label="Download full resume PDF">
+        ↓ Download PDF
+      </a>
+    </div>
+    <div class="resume-sections-grid">
+      <div class="resume-sec-block">
+        <h4>// Education</h4>
+        <ul>
+          <li>B.E. Electronics & Communication Engineering</li>
+          <li>AVS Engineering College, Salem</li>
+          <li>Anna University — 2022–2026</li>
+        </ul>
+      </div>
+      <div class="resume-sec-block">
+        <h4>// Technical Skills</h4>
+        <ul>
+          <li>Java, Spring Boot 3.2, Spring Security</li>
+          <li>React 18, JavaScript, SQL, Python</li>
+          <li>Arduino, Embedded C, IoT, RF Design</li>
+          <li>Git, REST APIs, JPA/Hibernate, JWT</li>
+        </ul>
+      </div>
+      <div class="resume-sec-block">
+        <h4>// Key Achievements</h4>
+        <ul>
+          <li>Published — IJEETR Mar–Apr 2026</li>
+          <li>12+ HackerRank Certifications</li>
+          <li>Software Engineer Verified — HackerRank</li>
+          <li>54+ LeetCode · Hard tier included</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
